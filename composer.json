@@ -1,0 +1,37 @@
+{
+  "name": "touchque/device-risk",
+  "description": "Official PHP server SDK for Touchque Device Risk: check a page's device identification, read and search identifications, report abuse activity",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://touchque.com",
+  "support": {
+    "source": "https://github.com/Touchque/touchque-device-risk-php"
+  },
+  "authors": [
+    {
+      "name": "Touchque",
+      "email": "developer@touchque.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Touchque\\DeviceRisk\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Touchque\\DeviceRisk\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit --testdox --bootstrap tests/bootstrap.php tests"
+  }
+}
