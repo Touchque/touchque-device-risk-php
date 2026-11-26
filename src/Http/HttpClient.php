@@ -14,7 +14,7 @@ use Touchque\DeviceRisk\Exceptions\TouchqueNetworkException;
  */
 class HttpClient
 {
-    public const SDK_VERSION = '1.0.0';
+    public const SDK_VERSION = '1.1.0';
     private Config $config;
 
     public function __construct(Config $config)
@@ -27,8 +27,8 @@ class HttpClient
         return $this->send('POST', $endpoint, self::encode($body));
     }
 
-    /** JSON with `{}` for an empty body (never `[]`). */
-    private static function encode(array $body): string
+    /** JSON with `{}` for an empty body (never `[]`): exactly what post() sends (botCheck() measures it). */
+    public static function encode(array $body): string
     {
         $bodyStr = json_encode($body === [] ? new \stdClass() : $body);
         if ($bodyStr === false) {
